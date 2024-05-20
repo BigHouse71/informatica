@@ -1,6 +1,7 @@
 package it.edu.iisgubbio.rimessa;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -68,6 +69,8 @@ public class Grarage extends Application {
 		griglia.add(bAggiungi, 2, 9,2,1);
 
 		griglia.setVgap(20);
+		griglia.setHgap(20);
+		griglia.setAlignment(Pos.CENTER);
 		box.getItems().add("Skateboard");
 		box.getItems().add("Barca");
 		box.getItems().add("Bicicletta");
@@ -90,15 +93,224 @@ public class Grarage extends Application {
 
 			MezzoDiTrasporto mezzoScelto = lista.getItems().get(indiceSelezionato);
 			if(mezzoScelto instanceof Skateboard c) {
+				box.setValue("Skateboard");
+				if(griglia.getChildren().contains(bSingoloRemoFalse)&& griglia.getChildren().contains(c4)) {
+					griglia.getChildren().remove(bSingoloRemoTrue);
+					griglia.getChildren().remove(bSingoloRemoFalse);
+					griglia.add(c5,2,6);
+				}else {
+					if(griglia.getChildren().contains(bSingoloRemoFalse)) {
+						griglia.getChildren().remove(bSingoloRemoTrue);
+						griglia.getChildren().remove(bSingoloRemoFalse);
+						griglia.add(c4,2,5);
+					}
+
+				}
 				c1.setText(c.getNome());
 				c2.setText(""+c.getCosto());
 				c3.setText(""+c.getLungezza());
 				c4.setText(c.getMuscoliCoinvolti());
+				e3.setText("Lungezza");
+				e4.setText("muscoliCoinvolti");
+				e5.setText("");
+				e6.setText("");
+				e7.setText("");
+				c5.setDisable(true);
+				c7.setDisable(true);
+				c6.setDisable(true);
+			
 			}
 			if(mezzoScelto instanceof Barca c) {
+				box.setValue("Barca");
+				if(griglia.getChildren().contains(bSingoloRemoFalse)) {
+					griglia.getChildren().remove(bSingoloRemoTrue);
+					griglia.getChildren().remove(bSingoloRemoFalse);
+					griglia.getChildren().remove(c5);
+					griglia.getChildren().remove(c4);
+					griglia.add(c4, 2, 5);
+					griglia.add(bSingoloRemoTrue, 2, 6);
+					griglia.add(bSingoloRemoFalse, 3, 6);
+				}else {
+					griglia.getChildren().remove(c5);
+					griglia.add(bSingoloRemoTrue, 2, 6);
+					griglia.add(bSingoloRemoFalse, 3, 6);
+				}
 				c1.setText(c.getNome());
 				c2.setText(""+c.getCosto());
 				c3.setText(""+c.getNumeroDiRemi());
+				c4.setText(c.getMuscoliCoinvolti());
+				e3.setText("NumeroRemi");
+				e5.setText("SingoloRemo");
+				e4.setText("muscoliCoinvolti");
+				e6.setText("");
+				e7.setText("");
+				c6.setDisable(false);
+				c6.setDisable(true);
+				c7.setDisable(true);
+				
+			}
+	
+
+			if(mezzoScelto instanceof Bicicletta c) {
+				box.setValue("Bicicletta");
+
+				
+				
+				if(griglia.getChildren().contains(bSingoloRemoFalse)&& griglia.getChildren().contains(c4)) {
+					griglia.getChildren().remove(bSingoloRemoTrue);
+					griglia.getChildren().remove(bSingoloRemoFalse);
+					griglia.add(c5,2,6);
+				}else {
+					if(griglia.getChildren().contains(bSingoloRemoFalse)) {
+						griglia.getChildren().remove(bSingoloRemoTrue);
+						griglia.getChildren().remove(bSingoloRemoFalse);
+						griglia.add(c4,2,5);
+					}
+
+				}
+				c1.setText(c.getNome());
+				c2.setText(""+c.getCosto());
+				c3.setText(""+c.getNumeroDiRapporti());
+				c4.setText(""+c.getPeso());
+				c5.setText(c.getMuscoliCoinvolti());
+				e3.setText("Numero rapporti");
+				e4.setText("peso");
+				e5.setText("muscoli coinvolti");
+				e7.setText("");
+				e6.setText("");
+
+				c5.setDisable(false);
+				c6.setDisable(false);
+				c7.setDisable(false);
+			}
+			if(mezzoScelto instanceof Automobile c) {
+				box.setValue("Automobile");
+				if(griglia.getChildren().contains(bSingoloRemoFalse)&& griglia.getChildren().contains(c4)) {
+					griglia.getChildren().remove(bSingoloRemoTrue);
+					griglia.getChildren().remove(bSingoloRemoFalse);
+					griglia.add(c5,2,6);
+				}else {
+					if(griglia.getChildren().contains(bSingoloRemoFalse)) {
+						griglia.getChildren().remove(bSingoloRemoTrue);
+						griglia.getChildren().remove(bSingoloRemoFalse);
+						griglia.add(c4,2,5);
+					}
+
+				}
+				c1.setText(c.getNome());
+				c2.setText(""+c.getCosto());
+				c3.setText(""+c.getRumorosità());
+				c4.setText(""+c.getVelocità());
+				c5.setText(""+c.getNumeroPorte());
+				c6.setText(""+c.getTarga());
+				c7.setText(c.getCarburante());
+				e3.setText("ruborosita");
+				e4.setText("velocità");
+				e5.setText("Porte");
+				e6.setText("Targa");
+				e7.setText("Carburante");
+				c5.setDisable(false);
+				c6.setDisable(false);
+				c7.setDisable(false);
+				
+			}
+			if(mezzoScelto instanceof Motocicletta c) {
+				box.setValue("Motocicletta");
+				if(griglia.getChildren().contains(bSingoloRemoFalse)&& griglia.getChildren().contains(c4)) {
+					griglia.getChildren().remove(bSingoloRemoTrue);
+					griglia.getChildren().remove(bSingoloRemoFalse);
+					griglia.add(c5,2,6);
+				}else {
+					if(griglia.getChildren().contains(bSingoloRemoFalse)) {
+						griglia.getChildren().remove(bSingoloRemoTrue);
+						griglia.getChildren().remove(bSingoloRemoFalse);
+						griglia.add(c4,2,5);
+					}
+
+				}
+				c1.setText(c.getNome());
+				c2.setText(""+c.getCosto());
+				c3.setText(""+c.getCilindrata());
+				c4.setText(""+c.getVelocità());
+				c5.setText(""+c.getRumorosità());
+				c6.setText(c.getCarburante());
+				c7.setText(""+c.getNumeroPosti());
+				e3.setText("Cilindrata");
+				e4.setText("velocità");
+				e5.setText("rumorosità");
+				e6.setText("Carburante");
+				e7.setText("NumeroPosti");
+				c5.setDisable(false);
+				c6.setDisable(false);
+				c7.setDisable(false);
+			}
+			
+			if(mezzoScelto instanceof Motoslitta c) {
+				box.setValue("Motoslitta");
+
+				if(griglia.getChildren().contains(bSingoloRemoFalse)&& griglia.getChildren().contains(c4)) {
+					griglia.getChildren().remove(bSingoloRemoTrue);
+					griglia.getChildren().remove(bSingoloRemoFalse);
+					griglia.add(c5,2,6);
+				}else {
+					if(griglia.getChildren().contains(bSingoloRemoFalse)) {
+						griglia.getChildren().remove(bSingoloRemoTrue);
+						griglia.getChildren().remove(bSingoloRemoFalse);
+						griglia.add(c4,2,5);
+					}
+
+				}
+				c1.setText(c.getNome());
+				c2.setText(""+c.getCosto());
+				c3.setText(""+c.getRumorosità());
+				c4.setText(""+c.getVelocità());
+				c5.setText(""+c.getTemperaturaMinima());
+				c6.setText(c.getCarburante());
+				e3.setText("rumorosita");
+				e4.setText("velocità");
+				e5.setText("temperatura minima");
+				e6.setText("Carburante");
+				c5.setDisable(false);
+				c6.setDisable(false);
+				e7.setText("");
+				c7.setDisable(true);
+			}
+			
+			if(mezzoScelto instanceof Deltaplano c) {
+				box.setValue("Deltaplano");
+
+				
+				if(griglia.getChildren().contains(bSingoloRemoFalse)&& griglia.getChildren().contains(c4)) {
+					griglia.getChildren().remove(bSingoloRemoTrue);
+					griglia.getChildren().remove(bSingoloRemoFalse);
+					griglia.add(c5,2,6);
+				}else {
+					if(griglia.getChildren().contains(bSingoloRemoFalse)) {
+						griglia.getChildren().remove(bSingoloRemoTrue);
+						griglia.getChildren().remove(bSingoloRemoFalse);
+						griglia.add(c4,2,5);
+					}
+
+				}
+				c1.setText(c.getNome());
+				c2.setText(""+c.getCosto());
+				c3.setText(""+c.getNumeroposti());
+				c4.setText(c.getCarburante());
+				c5.setText(""+c.getQuataMassima());
+				c6.setText(""+c.getRumorosità());
+				e3.setText("numero posti");
+				e4.setText("Carburante");
+				e5.setText("Quaota massima");
+				e6.setText("Rumorosità");
+				e7.setText("");
+				c5.setDisable(false);
+				c6.setDisable(false);
+				c7.setDisable(true);
+			}
+			
+			if(mezzoScelto instanceof Aereo c) {
+				box.setValue("Aereo");
+
 				
 				if(griglia.getChildren().contains(bSingoloRemoFalse)) {
 					griglia.getChildren().remove(bSingoloRemoTrue);
@@ -113,26 +325,45 @@ public class Grarage extends Application {
 					griglia.add(bSingoloRemoTrue, 2, 6);
 					griglia.add(bSingoloRemoFalse, 3, 6);
 				}
-				
-				if(c.isSingoloRemo()) {
+				if(c.isReazione()) {
 					bSingoloRemoTrue.setSelected(true);
 				}else {
 					bSingoloRemoTrue.setSelected(false);
 
 				}
+				if(griglia.getChildren().contains(bSingoloRemoFalse)) {
+					griglia.getChildren().remove(bSingoloRemoTrue);
+					griglia.getChildren().remove(bSingoloRemoFalse);
+					griglia.getChildren().remove(c5);
+					griglia.getChildren().remove(c4);
+					griglia.add(c4, 2, 5);
+					griglia.add(bSingoloRemoTrue, 2, 6);
+					griglia.add(bSingoloRemoFalse, 3, 6);
+				}else {
+					griglia.getChildren().remove(c5);
+					griglia.add(bSingoloRemoTrue, 2, 6);
+					griglia.add(bSingoloRemoFalse, 3, 6);
+				}
+				c1.setText(c.getNome());
+				c2.setText(""+c.getCosto());
+				c3.setText(c.getCarburante());
+				c4.setText(""+c.getDistanzaMassima());
+				c6.setText(""+c.getQuataMassima());
+				c7.setText(""+c.getRumorosità());
+				e3.setText("carburante");
+				e4.setText("Distanza massima");
+				e6.setText("Quata Massima");
+				e5.setText("Reazione");
+				e7.setText("rumorosità");
+				c5.setDisable(false);
+				c6.setDisable(false);
+				c7.setDisable(false);
+			}
 
-				c4.setText(c.getMuscoliCoinvolti());
-			}
-			if(mezzoScelto instanceof Automobile c) {
-				c3.setText(""+c.getRumorosità());
-				e4.setText(""+c.getVelocità());
-				e5.setText(""+c.getNumeroPorte());
-				e6.setText(c.getTarga());
-				e7.setText(c.getCarburante());
-			}
+
 			lista.getItems().remove(indiceSelezionato);
 		}
-		
+
 
 	}
 	public void aggiungi() {
@@ -142,10 +373,11 @@ public class Grarage extends Application {
 		switch(selezione) {
 		case "Deltaplano":
 			Deltaplano deltaplano=new Deltaplano(c1.getText(), Double.parseDouble(c2.getText()), Integer.parseInt(c3.getText()));
-			deltaplano.setNumeroposti(Integer.parseInt(c4.getText()));
-			deltaplano.setCarburante(c5.getText());
-			deltaplano.setQuataMassima(Double.parseDouble(c6.getText()));
-			deltaplano.setRumorosità(Double.parseDouble(c7.getText()));
+			deltaplano.setCarburante(c4.getText());
+			deltaplano.setQuataMassima(Double.parseDouble(c5.getText()));
+			deltaplano.setRumorosità(Double.parseDouble(c6.getText()));
+			lista.getItems().add(deltaplano);
+			break;
 
 		case"Aereo":
 			Aereo aereo=new Aereo(c1.getText());
@@ -154,8 +386,9 @@ public class Grarage extends Application {
 			aereo.setDistanzaMassima(Integer.parseInt(c4.getText()));
 			aereo.setReazione(bSingoloRemoTrue.isSelected());
 			aereo.setQuataMassima(Double.parseDouble(c6.getText()));
+			aereo.setRumorosità(Double.parseDouble(c7.getText()));
 			lista.getItems().add(aereo);
-
+			break;
 
 		case"Skateboard":
 			muscoli=c4.getText();
@@ -193,6 +426,7 @@ public class Grarage extends Application {
 			moto.setVelocità(Double.parseDouble(e4.getText()));
 			lista.getItems().add(moto);
 			break;
+			
 		case"Motoslitta":
 			Motoslitta slitta=new Motoslitta(c1.getText(), Double.parseDouble(c2.getText()), Double.parseDouble(c4.getText()));
 			slitta.setCarburante(c6.getText());
@@ -202,6 +436,8 @@ public class Grarage extends Application {
 			break;
 
 		}
+		bSingoloRemoTrue.setSelected(false);
+		bSingoloRemoFalse.setSelected(false);
 		c1.setText("");
 		c2.setText("");
 		c3.setText("");
@@ -213,6 +449,8 @@ public class Grarage extends Application {
 
 
 	}
+
+
 	public void veicolo() {
 		c1.setText("");
 		c2.setText("");
@@ -221,6 +459,8 @@ public class Grarage extends Application {
 		c5.setText("");
 		c6.setText("");
 		c7.setText("");
+		bSingoloRemoTrue.setSelected(false);
+		bSingoloRemoFalse.setSelected(false);
 		c5.setDisable(false);
 		c6.setDisable(false);
 		c7.setDisable(false);
@@ -230,61 +470,59 @@ public class Grarage extends Application {
 		switch (t){
 
 		case"Aereo":
-			if(griglia.getChildren().contains(c5)) {
-				griglia.getChildren().remove(c4);
-				griglia.add(bSingoloRemoTrue, 2, 5);
-				griglia.add(bSingoloRemoFalse, 3, 5);
-			}else {
+			if(griglia.getChildren().contains(bSingoloRemoFalse)) {
 				griglia.getChildren().remove(bSingoloRemoTrue);
 				griglia.getChildren().remove(bSingoloRemoFalse);
-				griglia.add(c5, 2, 6);
+				griglia.getChildren().remove(c5);
 				griglia.getChildren().remove(c4);
-				griglia.add(bSingoloRemoTrue, 2, 5);
-				griglia.add(bSingoloRemoFalse, 3, 5);
+				griglia.add(c4, 2, 5);
+				griglia.add(bSingoloRemoTrue, 2, 6);
+				griglia.add(bSingoloRemoFalse, 3, 6);
+			}else {
+				griglia.getChildren().remove(c5);
+				griglia.add(bSingoloRemoTrue, 2, 6);
+				griglia.add(bSingoloRemoFalse, 3, 6);
 			}
 			e3.setText("carburante");
 			e4.setText("Distanza massima");
 			e6.setText("Quata Massima");
 			e5.setText("Reazione");
-
-			e7.setText("");
-
-			c7.setDisable(true);
-
+			e7.setText("rumorosità");
+			break;
 
 		case"Deltaplano":
 
-			if(griglia.getChildren().contains(c5)) {
-				griglia.getChildren().remove(c4);
-				griglia.add(bSingoloRemoTrue, 2, 5);
-				griglia.add(bSingoloRemoFalse, 3, 5);
-			}else {
+			if(griglia.getChildren().contains(bSingoloRemoFalse)&& griglia.getChildren().contains(c4)) {
 				griglia.getChildren().remove(bSingoloRemoTrue);
 				griglia.getChildren().remove(bSingoloRemoFalse);
-				griglia.add(c5, 2, 6);
-				griglia.getChildren().remove(c4);
-				griglia.add(bSingoloRemoTrue, 2, 5);
-				griglia.add(bSingoloRemoFalse, 3, 5);
+				griglia.add(c5,2,6);
+			}else {
+				if(griglia.getChildren().contains(bSingoloRemoFalse)) {
+					griglia.getChildren().remove(bSingoloRemoTrue);
+					griglia.getChildren().remove(bSingoloRemoFalse);
+					griglia.add(c4,2,5);
+				}
+
 			}
-
 			e3.setText("numero posti");
-			e4.setText("accetta passegero");
-			e5.setText("Carburante");
-			e6.setText("Quaota massima");
-			e7.setText("Rumorosità");
-
+			e4.setText("Carburante");
+			e5.setText("Quaota massima");
+			e6.setText("Rumorosità");
+			e7.setText("");
+			c7.setDisable(true);
 
 			break;
 
 		case "Barca":
-			if(griglia.getChildren().contains(c4)) {
+			if(griglia.getChildren().contains(bSingoloRemoFalse)) {
+				griglia.getChildren().remove(bSingoloRemoTrue);
+				griglia.getChildren().remove(bSingoloRemoFalse);
 				griglia.getChildren().remove(c5);
+				griglia.getChildren().remove(c4);
+				griglia.add(c4, 2, 5);
 				griglia.add(bSingoloRemoTrue, 2, 6);
 				griglia.add(bSingoloRemoFalse, 3, 6);
 			}else {
-				griglia.getChildren().remove(bSingoloRemoTrue);
-				griglia.getChildren().remove(bSingoloRemoFalse);
-				griglia.add(c4, 2, 5);
 				griglia.getChildren().remove(c5);
 				griglia.add(bSingoloRemoTrue, 2, 6);
 				griglia.add(bSingoloRemoFalse, 3, 6);
@@ -374,7 +612,7 @@ public class Grarage extends Application {
 				}
 
 			}
-			e3.setText("ruborosita");
+			e3.setText("rumorosita");
 			e4.setText("velocità");
 			e5.setText("temperatura minima");
 			e6.setText("Carburante");
