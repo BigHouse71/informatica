@@ -1,6 +1,0 @@
-package it.edu.iisgubbio.mobilità;
-
-public class Aereo extends Volante {
-	private boolean reazione ;
-	private int distanzaMassima;
-

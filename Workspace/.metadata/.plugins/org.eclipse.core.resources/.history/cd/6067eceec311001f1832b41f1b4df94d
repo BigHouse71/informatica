@@ -1,5 +1,0 @@
-package it.edu.iisgubbio.mobilità;
-
-public class Deltaplano extends Volante{
-	private int numeroposti;
-}
