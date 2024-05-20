@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;apple.png&apos; to &apos;it.edu.is.gubbio3I2/src/it.edu.iisgubbio.giochi&apos;&#x0D;&#x0A;- Original project: &apos;it.edu.is.gubbio3I2&apos;&#x0D;&#x0A;- Destination element: &apos;it.edu.is.gubbio3I2/src/it.edu.iisgubbio.giochi&apos;&#x0D;&#x0A;- Original element: &apos;apple.png&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="/src&lt;it.edu.iisgubbio.giochi" element1="src/it/edu/iisgubbio/matematica/apple.png" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1711437368503" units="0" version="1.0"/>
+</session>

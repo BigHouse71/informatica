@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;it.edu.iisgubbio.oggetti&apos; to &apos;it.edu.iisgubbio.oggetti.tempo&apos;&#x0D;&#x0A;- Original project: &apos;it.edu.is.gubbio3I2&apos;&#x0D;&#x0A;- Original element: &apos;it.edu.is.gubbio3I2/src/it.edu.iisgubbio.oggetti&apos;&#x0D;&#x0A;- Renamed element: &apos;it.edu.is.gubbio3I2/src/it.edu.iisgubbio.oggetti.tempo&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;it.edu.iisgubbio.oggetti&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;it.edu.iisgubbio.oggetti" name="it.edu.iisgubbio.oggetti.tempo" qualified="false" references="true" stamp="1714457471287" textual="false" version="1.0"/>
+</session>
