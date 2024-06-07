@@ -1,0 +1,8 @@
+.grid-pane{
+	-fx-padding:10,10,10,10;
+	-fx-vgap:10;
+	-fx-hgap:10;
+}
+.lable{
+	-fx-font:italic bold 14pt"Arial Black";
+}
